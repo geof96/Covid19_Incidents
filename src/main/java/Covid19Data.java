@@ -2,6 +2,18 @@ public class Covid19Data {
     private String region;
     private String ageGroup;
     private int confirmedCases;
+
+    @Override
+    public String toString() {
+        return "Covid19Data: \n" +
+                "Region: " + region + "\n" +
+                "AgeGroup: " + ageGroup + "\n" +
+                "ConfirmedCases: " + confirmedCases + "\n" +
+                "Deaths: " + deaths + "\n" +
+                "IntensiveCareUnit: " + intensiveCareUnit + "\n" +
+                "HospitalizedPatients: " + hospitalizedPatients;
+    }
+
     private int deaths;
     private int intensiveCareUnit;
     private int hospitalizedPatients;
