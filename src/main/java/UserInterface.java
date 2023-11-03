@@ -23,7 +23,8 @@ public class UserInterface {
 
         switch (userInput) {
             case 1 -> restoreData();
-            case 2 ->
+            case 2 -> saveCovidData();
+            case 3 -> saveAllData();
         }
     }
 
@@ -33,6 +34,11 @@ public class UserInterface {
     }
 
     private void saveCovidData() {
+
         fileH.saveCovidData();
+    }
+
+    private void saveAllData(){
+        fileH.saveAllData();
     }
 }
