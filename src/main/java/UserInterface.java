@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 import static java.lang.System.exit;
@@ -12,6 +13,8 @@ public class UserInterface {
         System.out.println("""
                 1) Load Data
                 2) Save data
+                3) Sort by region
+                4) Sort by age group
                 0) exit program
                 """);
 
@@ -27,7 +30,9 @@ public class UserInterface {
             switch (userInput) {
                 case 1 -> restoreData();
                 case 2 -> saveAllData();
-                case 0 -> exit(0);
+                case 3 -> sortByRegion();
+                case 4 -> sortByAgeGroup();
+                    case 0 -> exit(0);
             }
         }
     }
@@ -38,12 +43,19 @@ public class UserInterface {
         System.out.println(covid19DataList);
     }
 
-    private void saveCovidData() {
-
-        // fileH.saveCovidData();
+    private void sortByRegion() {
+        System.out.println("Here is the list sorted by region");
+        Collections.sort(covid19DataList, new RegionComparator());
+        System.out.println(covid19DataList);
     }
 
     private void saveAllData() {
         fileH.saveAllData(covid19DataList);
+    }
+
+    private void sortByAgeGroup(){
+        System.out.println("Here is the list sorted by age");
+        Collections.sort(covid19DataList,new AgeGroupComparator());
+        System.out.println(covid19DataList);
     }
 }

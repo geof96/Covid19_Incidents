@@ -72,7 +72,6 @@ public class FileHandler {
                     int hospitalizedPatients = Integer.parseInt(attributter[5].trim());
                     Covid19Data indlæsData = new Covid19Data(region, ageGroup, confirmedCases, deaths, intensiveCareUnit, hospitalizedPatients);
                     information.add(indlæsData);
-                    Collections.sort(information, new RegionComparator());
                 } else {
                     System.out.println("File format not found!");
                 }
