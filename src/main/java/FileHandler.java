@@ -62,8 +62,8 @@ public class FileHandler {
 
             while (sc.hasNextLine()) {
                 String line = sc.nextLine();
-                String[] attributter = line.split(";");
-                if (attributter.length == 7) {
+                String[] attributter = line.split(",");
+                if (attributter.length == 6) {
                     String region = attributter[0].trim();
                     String ageGroup = attributter[1].trim();
                     int confirmedCases = Integer.parseInt(attributter[2].trim());
@@ -79,7 +79,7 @@ public class FileHandler {
                             hospitalizedPatients);
                     information.add(indlæsData);
                 } else {
-                    System.out.println("File format not found!");
+                    System.out.println("Length != 7");
                 }
             }
             sc.close();
