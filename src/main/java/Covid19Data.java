@@ -1,0 +1,42 @@
+public class Covid19Data {
+    private String region;
+    private String ageGroup;
+    private int confirmedCases;
+    private int deaths;
+    private int intensiveCareUnit;
+    private int hospitalizedPatients;
+
+
+    public Covid19Data(String region, String ageGroup, int confirmedCases, int deaths, int intensiveCareUnit, int hospitalizedPatients){
+        this.region = region;
+        this.ageGroup = ageGroup;
+        this.confirmedCases = confirmedCases;
+        this.deaths = deaths;
+        this.intensiveCareUnit = intensiveCareUnit;
+        this.hospitalizedPatients = hospitalizedPatients;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public String getAgeGroup() {
+        return ageGroup;
+    }
+
+    public int getConfirmedCases() {
+        return confirmedCases;
+    }
+
+    public int getDeaths() {
+        return deaths;
+    }
+
+    public int getIntensiveCareUnit() {
+        return intensiveCareUnit;
+    }
+
+    public int getHospitalizedPatients() {
+        return hospitalizedPatients;
+    }
+}
