@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 
@@ -52,7 +53,7 @@ public class FileHandler {
 
     public ArrayList<Covid19Data> restoreData(){
         File f = new File("Covid19 ark.csv");
-        ArrayList<Covid19Data> information = new ArrayList<Covid19Data>();
+        ArrayList<Covid19Data> information = new ArrayList<>();
 
         try {
             Scanner sc = new Scanner(f, StandardCharsets.ISO_8859_1);
@@ -71,6 +72,7 @@ public class FileHandler {
                     int hospitalizedPatients = Integer.parseInt(attributter[5].trim());
                     Covid19Data indlæsData = new Covid19Data(region, ageGroup, confirmedCases, deaths, intensiveCareUnit, hospitalizedPatients);
                     information.add(indlæsData);
+                    Collections.sort(information, new RegionComparator());
                 } else {
                     System.out.println("File format not found!");
                 }
